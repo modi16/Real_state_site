@@ -1,0 +1,164 @@
+/* 
+    General Styles
+*/
+
+/*Banks card Css properties */
+.card{
+    
+    width: 455px;
+    height: 386px;
+    display: block;
+    position: relative;
+    text-align: center;
+    margin: auto;
+    margin-top: 75px; 
+    
+}
+
+.underline{
+    
+     text-align: center;
+     margin-top: 55px;
+    
+}
+
+.heading1 {
+    margin-top: 10px;
+}
+
+.line{
+    
+    
+    border-bottom: 2px solid #007bff;
+    padding: 25px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.header{
+    
+    width: 100%;
+    height: 500px;
+    position: relative;
+    display: block;
+    
+}
+
+
+.logo{
+    
+    position: relative;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+
+.navbar-nav {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    padding-right: 0px;
+    margin-bottom: 0px;
+    list-style: none;
+     
+}
+
+
+.navbar {
+    position: relative;
+    height: 95px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    
+}
+
+.nav-link {
+    display: block;
+    padding: 1.5rem 1rem;
+    font-size: 25px;
+  
+}
+
+.navbar-expand-sm .navbar-nav .nav-link {
+    padding-right: 2.5rem;
+    padding-left: 0.5rem;
+}
+
+/* 
+    Search Css Properties
+*/
+.input-group > .form-control:not(:last-child), .input-group > .custom-select:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-left: 350px;
+    height: 55px;
+}
+
+.input-group-append {
+    margin-left: -1px;
+    margin-right: 350px;
+}
+
+.input-group {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: 100%;
+    margin-top: -285px;
+    
+}
+
+.logo1{
+    
+    
+    position: relative;
+    object-fit: cover;
+    width: 100%;
+    height: 30%;
+    
+    
+}
+
+
+.row{
+        margin-left: 10px;
+}
+
+
+.cardTwo{
+    
+    margin-top: 250px;
+    
+    
+}
+
+.card-img-top {
+    
+  
+    padding-bottom: 0px;
+    background-color: gray;
+    text-align: center;
+    font-size: 30px;
+    width: 200px;
+    
+}
+
+
+.col-3 {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 40%;
+    margin-bottom: -145px;
+}
