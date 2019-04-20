@@ -6,7 +6,11 @@ export class Footer extends Component {
 			<footer className="footer mt-auto py-3 text-center">
 				<p>
 					Made with <i className="fa fa-heart text-danger" /> by{" "}
+<<<<<<< HEAD
 					<a href="http://www.4geeksacademy.com">4Geeks Academy</a>
+=======
+					<a href="http://www.4geeksacademy.com">Real State</a>
+>>>>>>> f0fd4f6485b532a0e15bc746d1ac96d6ed35cad5
 				</p>
 			</footer>
 		);

@@ -1,29 +1,19 @@
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
-			//	demo: [
-			//		{
-			//			priceFilter: this.state.priceFilter,
-			//			typeFilter: this.state.typeFilter,
-			//			bdFilter: this.state.bdFilter
-			//		},
-			//	]
+			bankLists: [],
+
+			navBarArray: [
+				{ label: "Home", url: "/" },
+				{ label: "SellByOwner", url: "/SellByOwner" },
+				{ label: "Buyer", url: "/Buyer" },
+				{ label: "Rent", url: "/Rent" },
+				{ label: "Banks", url: "/bank" },
+				{ label: "Help", url: "/Help" },
+				{ label: "Login/Sign in", url: "/Login" }
+			]
 		},
 		actions: {
-			/*changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
-
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
-
-				//reset the global store
-				setStore({ demo: demo });
-			}*/
 			infopass: e => {
 				document
 					.getElementById("dataPost")
