@@ -1,0 +1,12 @@
+/* 
+    General Styles
+    
+    
+*/
+.filterBar{
+    font-family: 'Assistant', sans-serif;
+    font-size: 14px;
+}
+.btn-outline-secondary{
+    border-color: hsl(0,0%,80%);
+}
