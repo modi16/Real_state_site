@@ -28,4 +28,5 @@ export const Cards = props => {
 
 Cards.propTypes = {
 	cardsArray: PropTypes.array
+	
 };

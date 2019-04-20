@@ -26,8 +26,13 @@
 
 .underline{
     
-     text-align: center;
-     margin-top: 55px;
+    text-align: center;
+    margin-top: 56px;
+    padding-bottom: 25px;
+    width: 50%;
+    border-bottom: 3px solid blue;
+    text-underline: inherit;
+    margin-left: 520px;
     
 }
 
