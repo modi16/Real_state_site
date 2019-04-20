@@ -27,7 +27,7 @@ const getState = ({ getStore, setStore }) => {
 			infopass: e => {
 				document
 					.getElementById("dataPost")
-					.addEventListener("submit", postData);
+					.addEventListener("click", postData);
 
 				const postData = event => {
 					event.preventDefault();
