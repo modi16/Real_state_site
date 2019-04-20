@@ -1,0 +1,50 @@
+/* 
+    General Styles
+*/
+body {
+  background-image: url(../img/background-buyer.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-origin: padding-box;
+  background-attachment: fixed;
+}
+
+.name{
+    font-size: 25px;
+    color: red;
+}
+.container-fluid {
+    text-align: center;
+    color: white
+}
+
+.signup {
+   
+    text-align: center;
+}
+
+.button {
+  margin: auto;
+  text-align: center; 
+  font-size: 35px;
+  justify-content: center;
+    
+}
+
+.facebook {
+    width: 200px;
+    height: 35px;
+  
+}
+
+.login {
+    margin: auto;
+  text-align: center; 
+  font-size: 18px;
+  justify-content: center;
+  color: white
+}
+
+
+
+
