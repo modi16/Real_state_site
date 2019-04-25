@@ -1,8 +1,10 @@
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
+			//empty Array to store values from the api's
 			bankLists: [],
-
+			propertyLists: [],
+			//navbar
 			navBarArray: [
 				{ label: "Home", url: "/" },
 				{ label: "SellByOwner", url: "/SellByOwner" },
@@ -27,6 +29,8 @@ const getState = ({ getStore, setStore }) => {
 					let priceFilter = document.getElementById("priceFilter")
 						.value;
 					let bdFilter = document.getElementById("bdFilter").value;
+
+					//get values from api's
 
 					fetch(
 						"https://wordpress-projectfinalproject-glaelt16.c9users.io/wp-json/real_state/v2/property",

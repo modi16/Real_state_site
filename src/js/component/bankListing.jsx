@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const Banks = props => {
 	return (
-		<div className="card">
+		<div className="card cardBank">
 			<img
 				className="card-img-top"
 				src={props.bankPic}
@@ -25,7 +25,7 @@ Banks.propTypes = {
 	bankPic: PropTypes.string,
 	bankName: PropTypes.string,
 	bankRate: PropTypes.number,
-	bankApply: PropTypes.string //the function parseTime returns a Moment tag, that's why prop type is object
+	bankApply: PropTypes.string
 };
 
 export default Banks;
