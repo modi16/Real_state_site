@@ -1,28 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-<<<<<<< HEAD
-
-export class Navbar extends React.Component {
-	render() {
-		return (
-			<nav className="navbar navbar-light bg-light mb-3">
-				<Link to="/">
-					<span className="navbar-brand mb-0 h1">
-						React Webapp Boilerplate
-					</span>
-				</Link>
-				<div className="ml-auto">
-					<Link to="/demo">
-						<button className="btn btn-primary">
-							Check the Context in action
-						</button>
-					</Link>
-				</div>
-			</nav>
-		);
-	}
-}
-=======
 import { Context } from "../store/appContext.jsx";
 
 export const Navbar = () => {
@@ -66,4 +43,3 @@ export const Navbar = () => {
 		</div>
 	);
 };
->>>>>>> f0fd4f6485b532a0e15bc746d1ac96d6ed35cad5

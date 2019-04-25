@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-
 export const Cards = props => {
 	const renderCard = props.cardsArray.map((card, index) => {
 		return (
@@ -22,11 +21,8 @@ export const Cards = props => {
 			</div>
 		);
 	});
-
 	return <div className="row">{renderCard}</div>;
 };
-
 Cards.propTypes = {
 	cardsArray: PropTypes.array
-	
 };

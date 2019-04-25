@@ -3,6 +3,8 @@ const getState = ({ getStore, setStore }) => {
 		store: {
 			bankLists: [],
 
+			propertyList: [],
+
 			navBarArray: [
 				{ label: "Home", url: "/" },
 				{ label: "SellByOwner", url: "/SellByOwner" },
@@ -14,36 +16,26 @@ const getState = ({ getStore, setStore }) => {
 			]
 		},
 		actions: {
-			infopass: e => {
-				document
-					.getElementById("dataPost")
-					.addEventListener("click", postData);
-
-				const postData = event => {
-					event.preventDefault();
-
-					let typeFilter = document.getElementById("typeFilter")
-						.value;
-					let priceFilter = document.getElementById("priceFilter")
-						.value;
-					let bdFilter = document.getElementById("bdFilter").value;
-
-					fetch(
-						"https://wordpress-projectfinalproject-glaelt16.c9users.io/wp-json/real_state/v2/property",
-						{
-							method: "POST",
-							headers: new Headers(),
-							body: JSON.stringify({
-								typeFilter: typeFilter,
-								priceFilter: priceFilter,
-								bdFilter: bdFilter
-							})
-						}
-					)
-						.then(res => res.json())
-						.then(data => console.log(data))
-						.catch(err => console.log(err));
-				};
+			infopass: data => {
+				console.log(data);
+				fetch(
+					"https://wordpress-projectfinalproject-glaelt16.c9users.io/wp-json/real_state/v2/property/",
+					{
+						method: "post",
+						headers: {
+							// Accept: "application/json",
+							"Content-Type": "application/json"
+						},
+						body: JSON.stringify({
+							typeFilter: data.typeFilter,
+							priceFilter: data.priceFilter,
+							bdFilter: data.bdFilter
+						})
+					}
+				)
+					.then(res => res.json())
+					.then(data => console.log(data))
+					.catch(err => console.log(err));
 			}
 		}
 	};
