@@ -2,7 +2,7 @@
     General Styles
 */
 body {
-  background-image: url(../img/background-buyer.jpg);
+  
   background-repeat: no-repeat;
   background-size: cover;
   background-origin: padding-box;
@@ -15,7 +15,7 @@ body {
 }
 .container-fluid {
     text-align: center;
-    color: white
+    color: black;
 }
 
 .signup {
@@ -42,9 +42,57 @@ body {
   text-align: center; 
   font-size: 18px;
   justify-content: center;
-  color: white
+  color: black;
 }
 
 
+.titlle{
+    color: black;
+}
 
+.label{
+    color: black;
+}
 
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+}
+
+.LogInPage{
+    
+    background: none;
+}
+
+.agree{
+    padding-left: 40px;
+    display: inline-block;
+    
+}
+
+.disagree{
+    padding-left:30px;
+    display: inline-block;
+}
+
+h3{
+    padding-left: 45px;
+}
+
+h1{
+    padding-left: 40%;
+}
+
+.label{
+    padding-left: 40px;
+    padding-right: 80px;
+    border-style: ridge;
+    margin: 10px;
+}
+
+.formGroupPassword{
+    border-style: solid;
+}

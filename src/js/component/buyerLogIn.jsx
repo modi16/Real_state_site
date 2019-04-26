@@ -33,6 +33,7 @@ const BuyerLogInPage = props => {
 						<i class="fab fa-facebook" /> Facebook
 					</button>
 				</div>
+
 				<br />
 				<div className="google">
 					<button type="button" class="btn btn-primary btn-md">
@@ -46,7 +47,6 @@ const BuyerLogInPage = props => {
 					</button>
 				</div>
 			</div>
-			<br />
 			<br />
 			<br />
 

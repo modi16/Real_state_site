@@ -47,7 +47,7 @@ const OwnerLogInPage = props => {
 			<div className="login">
 				<h3> Have an account?</h3>
 				<button type="button" class="btn btn-primary btn-md">
-					<i className="fas fa-sign-in-alt" /> Sign In
+					<i class="fas fa-sign-in-alt" /> Sign In
 				</button>
 			</div>
 		</body>
