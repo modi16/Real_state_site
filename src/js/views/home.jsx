@@ -55,21 +55,18 @@ export class Home extends React.Component {
 				<div className="row d-flex homeCard">
 					<Context.Consumer>
 						{({ store, actions }) => {
-							return store.propertyLists.map(propertyList => {
+							return store.propertyList.map(elem => {
 								return (
 									<Cards
-										key={propertyList.ID}
-										housePic={propertyList.acf.image}
-										houseTitle={
-											propertyList.acf.title_of_post
-										}
-										houseAddress={propertyList.acf.address}
-										houseZipCode={propertyList.acf.zip_code}
-										houseBed={propertyList.acf.bedrooms}
-										houseBath={propertyList.acf.bathrooms}
+										key={elem.ID}
+										housePic={elem.acf.image}
+										houseTitle={elem.acf.title_of_post}
+										houseAddress={elem.acf.address}
+										houseZipCode={elem.acf.zip_code}
+										houseBed={elem.acf.bedrooms}
+										houseBath={elem.acf.bathrooms}
 										housePrice={
-											propertyList.acf
-												.description_of_property
+											elem.acf.description_of_property
 										}
 									/>
 								);

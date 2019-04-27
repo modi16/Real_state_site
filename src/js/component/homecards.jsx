@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-
 export const Cards = props => {
 	return (
 		<div className="col-3 mb-3">
@@ -29,7 +28,6 @@ export const Cards = props => {
 		</div>
 	);
 };
-
 Cards.propTypes = {
 	housePic: PropTypes.string,
 	houseTitle: PropTypes.string,

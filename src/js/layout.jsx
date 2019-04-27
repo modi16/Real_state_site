@@ -24,7 +24,7 @@ export class Layout extends React.Component {
 						<Switch>
 							<Route exact path="/" component={Home} />
 							<Route path="/demo" component={Demo} />
-							<Route path="/single/:theid" component={Single} />
+							<Route path="/property/:theid" component={Single} />
 							<Route path="/property" component={Detail} />
 							<Route path="/bank" component={Bank} />
 							<Route render={() => <h1>Not found!</h1>} />

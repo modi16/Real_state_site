@@ -51,17 +51,34 @@ const Store = PassedComponent => {
 					}
 
 					response.json().then(data => {
-						//	console.log(
-						//		data.posts[1].attachments[2].images.thumbnail.url
-						//	);
 						let store = this.state.store;
-						store.propertyLists = data;
+						store.propertyList = data;
 						this.setState({ store });
 					});
 				})
 				.catch(err => {
 					alert("Fetch error: ", err);
 				});
+
+			// fetch("https://assets.breatheco.de/apis/fake/meetup/events")
+			// .then(response => {
+			// 	if (response.status !== 200) {
+			// 		alert("Connection error, status " + response.status);
+			// 		return;
+			// 	}
+
+			// 	response.json().then(data => {
+			// 		//	console.log(
+			// 		//		data.posts[1].attachments[2].images.thumbnail.url
+			// 		//	);
+			// 		let store = this.state.store;
+			// 		store.propertyLists = data;
+			// 		this.setState({ store });
+			// 	});
+			// })
+			// .catch(err => {
+			// 	alert("Fetch error: ", err);
+			// });
 		}
 
 		render() {
