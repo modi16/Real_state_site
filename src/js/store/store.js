@@ -1,33 +1,41 @@
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
+			bankLists: [],
+
+			propertyList: [],
+
+			navBarArray: [
+				{ label: "Home", url: "/" },
+				{ label: "SellByOwner", url: "/SellByOwner" },
+				{ label: "Buyer", url: "/Buyer" },
+				{ label: "Rent", url: "/Rent" },
+				{ label: "Banks", url: "/bank" },
+				{ label: "Help", url: "/Help" },
+				{ label: "Login/Sign in", url: "/Login" }
 			]
 		},
 		actions: {
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
-
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
-
-				//reset the global store
-				setStore({ demo: demo });
+			infopass: data => {
+				console.log(data);
+				fetch(
+					"https://wordpress-projectfinalproject-glaelt16.c9users.io/wp-json/real_state/v2/property/",
+					{
+						method: "post",
+						headers: {
+							// Accept: "application/json",
+							"Content-Type": "application/json"
+						},
+						body: JSON.stringify({
+							typeFilter: data.typeFilter,
+							priceFilter: data.priceFilter,
+							bdFilter: data.bdFilter
+						})
+					}
+				)
+					.then(res => res.json())
+					.then(data => console.log(data))
+					.catch(err => console.log(err));
 			}
 		}
 	};
