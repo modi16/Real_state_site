@@ -5,6 +5,8 @@ const getState = ({ getStore, setStore }) => {
 
 			propertyList: [],
 
+			filteredList: [],
+
 			navBarArray: [
 				{ label: "Home", url: "/" },
 				{ label: "SellByOwner", url: "/SellByOwner" },
@@ -34,7 +36,12 @@ const getState = ({ getStore, setStore }) => {
 					}
 				)
 					.then(res => res.json())
-					.then(data => console.log(data))
+					.then(data => {
+						let store = getStore();
+						store.filteredList = data;
+
+						setStore({ filteredList: store.filteredList });
+					})
 					.catch(err => console.log(err));
 			}
 		}

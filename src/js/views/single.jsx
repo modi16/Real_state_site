@@ -11,39 +11,36 @@ export class Single extends React.Component {
 			<div>
 				<Context.Consumer>
 					{({ store, actions }) => {
+						//	let propertyId = this.props.match.params.theid;
+
 						let found = store.propertyList.find(element => {
 							return (
-								this.props.match.params.propertyid ===
+								this.props.match.params.theid ===
 								element.ID.toString()
 							);
 						});
 
+						//	title_of_post= {typeof found === "undefined" ? "Property not Found" : found.acf.title_of_post}
+						console.log(found);
 						return (
 							<div>
 								<div>
 									<h1 className="display-4">
-										{
-											store.propertyList[0].acf
-												.title_of_post
-										}
+										{found.acf.title_of_post}
 									</h1>
 								</div>
 								<div>
 									<span />
 								</div>
 								<div>
-									$
-									{
-										store.propertyList[0].acf
-											.price_of_property
-									}{" "}
-									| {store.propertyList[0].acf.bedrooms} |{" "}
-									{store.propertyList[0].acf.bathrooms}
+									${found.acf.price_of_property} |{" "}
+									{store.found.acf.bedrooms} |{" "}
+									{store.found.acf.bathrooms}
 								</div>
 								<div>
-									{store.propertyList[0].acf.address} .{" "}
-									{store.propertyList[0].acf.city} |{" "}
-									{store.propertyList[0].acf.zip_code}
+									{store.found.acf.address} .{" "}
+									{store.found.acf.city} |{" "}
+									{store.found.acf.zip_code}
 								</div>
 								<div>
 									{
