@@ -53,12 +53,14 @@ export class Single extends React.Component {
 					}}
 				</Context.Consumer>
 
+				<hr className="my-4" />
+
 				<Link to="/">
 					<span
 						className="btn btn-primary btn-lg"
 						href="#"
 						role="button">
-						Contact the Seller
+						Back home
 					</span>
 				</Link>
 			</div>
