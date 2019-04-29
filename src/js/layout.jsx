@@ -5,11 +5,14 @@ import ScrollToTop from "./component/functional/scrollToTop.jsx";
 import { Home } from "./views/home.jsx";
 import { Demo } from "./views/demo.jsx";
 import { Single } from "./views/single.jsx";
-import { PropertyUpload } from "./views/propertyUpload.jsx";
+import { Detail } from "./views/detail.jsx";
 import Store from "./store/appContext.jsx";
 
 import { Navbar } from "./component/navbar.jsx";
 import { Footer } from "./component/footer.jsx";
+import Filters from "./component/filterByPrice.jsx";
+import { Bank } from "./views/bank.jsx";
+import { PropertyUpload } from "./views/propertyUpload.jsx";
 
 //create your first component
 export class Layout extends React.Component {
@@ -22,11 +25,10 @@ export class Layout extends React.Component {
 						<Switch>
 							<Route exact path="/" component={Home} />
 							<Route path="/demo" component={Demo} />
-							<Route
-								path="/uploadProperty"
-								component={PropertyUpload}
-							/>
-							<Route path="/single/:theid" component={Single} />
+							<Route path="/property/:theid" component={Single} />
+							<Route path="/property" component={Detail} />
+							<Route path="/uploadProperty" component={PropertyUpload} />
+							<Route path="/bank" component={Bank} />
 							<Route render={() => <h1>Not found!</h1>} />
 						</Switch>
 						<Footer />
@@ -36,5 +38,4 @@ export class Layout extends React.Component {
 		);
 	}
 }
-
 export default Store(Layout);

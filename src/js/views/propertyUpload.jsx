@@ -20,11 +20,7 @@ import {
 	DropdownMenu,
 	DropdownItem
 } from "reactstrap";
-
-import Select from "react-select";
-
-import SelectUSState from "react-select-us-states";
-
+import Select from 'react-select';
 import ImageUploader from "react-images-upload";
 
 const beds = [
@@ -348,15 +344,12 @@ export class PropertyUpload extends React.Component {
 		this.setState({ [e.target.name]: e.target.value });
 	}
 
-	onDrop2(picture) {
-		this.setState({
-			imgArr: this.state.imgArr.concat(picture)
-		});
+	onDrop(picture) {
+			this.setState({
+				imgArr: this.state.imgArr.concat(picture)
+			});
 	}
 
-	onDrop(imgArr) {
-		this.setState({ imgArr });
-	}
 
 	render() {
 		const { Seller } = this.state.Seller;
