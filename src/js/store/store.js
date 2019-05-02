@@ -8,9 +8,8 @@ const getState = ({ getStore, setStore }) => {
 			filteredList: [],
 
 			navBarArray: [
-				{ label: "Home", url: "/" },
-				{ label: "SellByOwner", url: "/SellByOwner" },
-				{ label: "Buyer", url: "/Buyer" },
+				{ label: "Sell", url: "/SellByOwner" },
+				{ label: "Buy", url: "/property" },
 				{ label: "Rent", url: "/Rent" },
 				{ label: "Banks", url: "/bank" },
 				{ label: "Help", url: "/Help" },
@@ -43,6 +42,21 @@ const getState = ({ getStore, setStore }) => {
 						setStore({ filteredList: store.filteredList });
 					})
 					.catch(err => console.log(err));
+			},
+
+			findProperty: propertyID => {
+				let store = getStore();
+				if (store.propertyList !== []) {
+					let property = store.propertyList.filter((item, index) => {
+						let strID = item.ID.toString();
+						if (strID == propertyID) {
+							return item;
+						}
+					});
+					if (property[0] !== undefined) {
+						return property[0];
+					}
+				}
 			}
 		}
 	};
