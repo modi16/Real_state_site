@@ -698,7 +698,7 @@ export class PropertyUpload extends React.Component {
 										<div className="col-md-4 text-center">
 											<Button
 												className="btn-lg"
-												//href={"/listingConfirmation"}
+												href={"/listingConfirmation"}
 												onClick={e => {
 													actions.uploadProperty(
 														this.state
