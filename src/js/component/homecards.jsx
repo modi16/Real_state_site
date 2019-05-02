@@ -1,5 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import Card from "../component/card.jsx";
+import { Button } from "react-bootstrap";
+
 export const Cards = props => {
 	return (
 		<div className="col-3 mb-3">
@@ -20,9 +24,13 @@ export const Cards = props => {
 
 					<p className="card-text">{props.housePrice}</p>
 					<p className="card-text">{props.houseDescription}</p>
-					<a href="#" className="btn btn-primary align-middle">
-						Find Out More!
-					</a>
+					<Link to={"/property/" + props.houseID}>
+						<Button
+							// href="/property"
+							className="btn btn-primary align-middle">
+							Find Out More!
+						</Button>
+					</Link>
 				</div>
 			</div>
 		</div>
@@ -36,5 +44,6 @@ Cards.propTypes = {
 	houseBed: PropTypes.number,
 	houseBath: PropTypes.number,
 	housePrice: PropTypes.number,
-	houseDescription: PropTypes.string
+	houseDescription: PropTypes.string,
+	houseID: PropTypes.number
 };

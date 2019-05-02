@@ -12,7 +12,9 @@ import { Navbar } from "./component/navbar.jsx";
 import { Footer } from "./component/footer.jsx";
 import Filters from "./component/filterByPrice.jsx";
 import { Bank } from "./views/bank.jsx";
-
+import { Owner } from "./views/loginowner.jsx";
+import { SearchPage } from "./views/search.jsx";
+import { Regist } from "./views/registration.jsx";
 //create your first component
 export class Layout extends React.Component {
 	render() {
@@ -23,10 +25,13 @@ export class Layout extends React.Component {
 						<Navbar />
 						<Switch>
 							<Route exact path="/" component={Home} />
+							<Route path="/loginowner" component={Owner} />
+							<Route path="/search" component={SearchPage} />
 							<Route path="/demo" component={Demo} />
 							<Route path="/property/:theid" component={Single} />
 							<Route path="/property" component={Detail} />
 							<Route path="/bank" component={Bank} />
+							<Route path="/registration" component={Regist} />
 							<Route render={() => <h1>Not found!</h1>} />
 						</Switch>
 						<Footer />

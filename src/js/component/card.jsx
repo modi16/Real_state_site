@@ -15,11 +15,11 @@ const Card = props => {
 				<div className="col-8 my-2 ">
 					<p className="subheader m-0">
 						{" "}
-						<a href="">{props.eventName}</a>
+						<a href="">{props.propertieTitle}</a>
 					</p>
 					<small>
 						{" "}
-						<a href=""> Meetup {props.eventMeetup}</a>
+						<a href=""> Meetup {props.propertieDescription}</a>
 					</small>
 				</div>
 			</div>
@@ -28,12 +28,10 @@ const Card = props => {
 };
 
 Card.propTypes = {
-	propertie: PropTypes.array,
 	propertieId: PropTypes.number,
-	propertieImage: PropTypes.object,
-	eventTime: PropTypes.object, //the function parseTime returns a Moment tag, that's why prop type is object
-	eventName: PropTypes.string,
-	eventMeetup: PropTypes.string
+	propertieImage: PropTypes.string,
+	propertieTitle: PropTypes.string, //the function parseTime returns a Moment tag, that's why prop type is object
+	propertieDescription: PropTypes.string
 };
 
 export default Card;
