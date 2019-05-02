@@ -14,8 +14,7 @@ import Filters from "./component/filterByPrice.jsx";
 import { Bank } from "./views/bank.jsx";
 import { PropertyUpload } from "./views/propertyUpload.jsx";
 import { UploadConfirmation } from "./views/propertyListingConfirmation.jsx";
-
-
+import { Notifier } from "bc-react-notifier";
 
 //create your first component
 export class Layout extends React.Component {
@@ -25,6 +24,7 @@ export class Layout extends React.Component {
 				<BrowserRouter>
 					<ScrollToTop>
 						<Navbar />
+						<Notifier />
 						<Switch>
 							<Route exact path="/" component={Home} />
 							<Route path="/demo" component={Demo} />

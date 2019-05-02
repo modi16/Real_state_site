@@ -2,27 +2,38 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext.jsx";
-import ImageGallery from "react-image-gallery";
-import "../../../node_modules/react-image-gallery/styles/css/image-gallery.css";
+import { ContactModal } from "../component/contactModal.jsx";
+import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
+import { Notify } from "bc-react-notifier";
 
 
 export class Single extends React.Component {
+	constructor(props) {
+		super(props);
+
+		this.state = { isOpen: false };
+	}
+
+	toggleModal = () => {
+		this.setState({
+			isOpen: !this.state.isOpen
+		});
+	};
+
 	render() {
 		return (
 			<div className="jumbotron">
 				<Context.Consumer>
 					{({ store, actions }) => {
-						//	let propertyId = this.props.match.params.theid;
+						let propertyId = this.props.match.params.theid;
 
-						let found = store.propertyList.find(element => {
-							return (
-								this.props.match.params.theid ===
-								element.ID.toString()
-							);
-						});
+						let found = actions.findProperty(propertyId);
 
-						//	title_of_post= {typeof found === "undefined" ? "Property not Found" : found.acf.title_of_post}
 						console.log(found);
+						if (typeof found == "undefined") {
+							Notify.error("Loading");
+							return null;
+						}
 						return (
 							<div>
 								<div>
@@ -35,20 +46,13 @@ export class Single extends React.Component {
 								</div>
 								<div>
 									${found.acf.price_of_property} |{" "}
-									{store.found.acf.bedrooms} |{" "}
-									{store.found.acf.bathrooms}
+									{found.acf.bedrooms} | {found.acf.bathrooms}
 								</div>
 								<div>
-									{store.found.acf.address} .{" "}
-									{store.found.acf.city} |{" "}
-									{store.found.acf.zip_code}
+									{found.acf.address} . {found.acf.city} |{" "}
+									{found.acf.zip_code}
 								</div>
-								<div>
-									{
-										store.propertyList[0].acf
-											.description_of_property
-									}
-								</div>
+								<div>{found.acf.description_of_property}</div>
 							</div>
 
 						);
@@ -60,15 +64,22 @@ export class Single extends React.Component {
 				<hr className="my-4" />
 
 				<Link to="/">
-					<span
-						className="btn btn-primary btn-lg"
-						href="#"
-						role="button">
+					<span className="btn btn-primary btn-lg" role="button">
 						Back home
 
 					
 					</span>
 				</Link>
+				<Button
+					variant="primary"
+					role="button"
+					onClick={this.toggleModal}>
+					Contact the Seller
+				</Button>
+				<ContactModal
+					show={this.state.isOpen}
+					onClose={this.toggleModal}
+				/>
 			</div>
 		);
 	}
