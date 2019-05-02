@@ -5,7 +5,6 @@ const getState = ({ getStore, setStore }) => {
 			bankLists: [],
 
 			propertyList: [],
-
 			navBarArray: [
 				{ label: "Home", url: "/" },
 				{ label: "SellByOwner", url: "/SellByOwner" },
@@ -20,9 +19,9 @@ const getState = ({ getStore, setStore }) => {
 		actions: {
 			uploadProperty: data => {
 				fetch(
-					"https://wordpress-projectfinalproject-glaelt16.c9users.io/wp-json/real_state/v2/property/",
+					"https://wordpress-projectfinalproject-glaelt16.c9users.io/wp-json/real_state/v2/property",
 					{
-						method: "put",
+						method: "PUT",
 						body: JSON.stringify({
 							title_of_post: data.listingTitle,
 							property_type: data.PropertyType,
@@ -36,8 +35,9 @@ const getState = ({ getStore, setStore }) => {
 							price_range: data.price
 						}),
 						headers: {
-							Accept: "application/json",
-							"Content-Type": "application/json"
+							//Accept: "application/json",
+							"Content-Type": "application/json", 
+							"Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvd29yZHByZXNzLXJleW1hZ28uYzl1c2Vycy5pbyIsImlhdCI6MTU1NDc2NDY1NCwibmJmIjoxNTU0NzY0NjU0LCJleHAiOjE1NTUzNjk0NTQsImRhdGEiOnsidXNlciI6eyJpZCI6IjEifX19.P-KL4uHNKF8IoQq7g55wz38Ptqu24NlLtwL28465IVQ" 
 						}
 					}
 				);
@@ -61,7 +61,12 @@ const getState = ({ getStore, setStore }) => {
 					}
 				)
 					.then(res => res.json())
-					.then(data => console.log(data))
+					.then(data => {
+						let store = getStore();
+						store.filteredList = data;
+
+						setStore({ filteredList: store.filteredList });
+					})
 					.catch(err => console.log(err));
 			}
 		}

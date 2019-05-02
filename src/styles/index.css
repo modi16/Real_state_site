@@ -1,6 +1,126 @@
 /* 
     General Styles
+<<<<<<< HEAD
 */
+
+body {
+  
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-origin: padding-box;
+  background-attachment: fixed;
+}
+
+.name{
+    font-size: 25px;
+    color: red;
+}
+.container-fluid {
+    text-align: center;
+    color: black;
+}
+
+.signup {
+   
+    text-align: center;
+}
+
+.button {
+  margin: auto;
+  text-align: center; 
+  font-size: 35px;
+  justify-content: center;
+    
+}
+
+.facebook {
+    width: 200px;
+    height: 35px;
+  
+}
+
+.login {
+    margin: auto;
+  text-align: center; 
+  font-size: 18px;
+  justify-content: center;
+  color: black;
+}
+
+
+.titlle{
+    color: black;
+}
+
+.label{
+    color: black;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+}
+
+#inputPropertyUpload{
+    border: 1px solid;
+    color: #ced4da;
+}
+
+#selectPropertyUpload{
+    display: block;
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s 
+}
+
+
+.LogInPage{
+    
+    background: none;
+}
+
+.agree{
+    padding-left: 40px;
+    display: inline-block;
+    
+}
+
+.disagree{
+    padding-left:30px;
+    display: inline-block;
+}
+
+h3{
+    padding-left: 45px;
+}
+
+h1{
+    padding-left: 40%;
+}
+
+.label{
+    padding-left: 40px;
+    padding-right: 80px;
+    border-style: ridge;
+    margin: 10px;
+}
+
+.formGroupPassword{
+    border-style: solid;
+}
+    
+    
 
 .filterBar{
     font-family: 'Assistant', sans-serif;
@@ -57,7 +177,6 @@
     
 }
 
-
 .logo{
     
     position: relative;
@@ -65,7 +184,6 @@
     width: 100%;
     height: 100%;
 }
-
 
 .navbar-nav {
     display: -ms-flexbox;
@@ -76,7 +194,6 @@
     list-style: none;
      
 }
-
 
 .navbar {
     position: relative;

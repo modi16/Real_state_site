@@ -22,6 +22,7 @@ const Store = PassedComponent => {
 			// you should do your ajax requests here
 
 			//This to get the data or send data to wordpress endpoint.
+
 			fetch(
 				"https://wordpress-projectfinalproject-glaelt16.c9users.io/wp-json/real_state/v2/banks"
 			)
@@ -52,7 +53,7 @@ const Store = PassedComponent => {
 
 					response.json().then(data => {
 						let store = this.state.store;
-						store.propertyLists = data;
+						store.propertyList = data;
 						this.setState({ store });
 					});
 				})
@@ -81,6 +82,8 @@ const Store = PassedComponent => {
 		}
 
 		render() {
+			let store = this.state.store;
+			store;
 			return (
 				<Context.Provider value={this.state}>
 					<PassedComponent {...this.props} />

@@ -13,6 +13,9 @@ import { Footer } from "./component/footer.jsx";
 import Filters from "./component/filterByPrice.jsx";
 import { Bank } from "./views/bank.jsx";
 import { PropertyUpload } from "./views/propertyUpload.jsx";
+import { UploadConfirmation } from "./views/propertyListingConfirmation.jsx";
+
+
 
 //create your first component
 export class Layout extends React.Component {
@@ -28,6 +31,7 @@ export class Layout extends React.Component {
 							<Route path="/property/:theid" component={Single} />
 							<Route path="/property" component={Detail} />
 							<Route path="/uploadProperty" component={PropertyUpload} />
+							<Route path="/listingConfirmation" component={UploadConfirmation} />
 							<Route path="/bank" component={Bank} />
 							<Route render={() => <h1>Not found!</h1>} />
 						</Switch>

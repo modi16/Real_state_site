@@ -390,6 +390,7 @@ export class PropertyUpload extends React.Component {
 												Property Title
 											</Label>
 											<Input
+												ID="inputPropertyUpload"												
 												type="text"
 												value={this.state.listingTitle}
 												name="listingTitle"
@@ -409,6 +410,7 @@ export class PropertyUpload extends React.Component {
 												Property Address
 											</label>
 											<Input
+												ID="inputPropertyUpload"
 												type="text"
 												value={this.state.address}
 												name="address"
@@ -424,6 +426,7 @@ export class PropertyUpload extends React.Component {
 									<div className="row">
 										<div className="col-md-4 mb-4">
 											<Select
+												ID="selectPropertyUpload"
 												value={States}
 												placeholder="States"
 												onChange={e => {
@@ -437,6 +440,7 @@ export class PropertyUpload extends React.Component {
 										</div>
 										<div className="col-sm-4  mb-4">
 											<Input
+												ID="inputPropertyUpload"
 												type="text"
 												value={this.state.city}
 												name="city"
@@ -465,6 +469,7 @@ export class PropertyUpload extends React.Component {
 										</div>
 										<div className="col-md-4 mb-4">
 											<Input
+												ID="inputPropertyUpload"
 												type="text"
 												value={this.state.zipCode}
 												name="zipCode"
@@ -514,6 +519,7 @@ export class PropertyUpload extends React.Component {
 											</Label>
 											<div className="mb-4">
 												<Input
+													ID="inputPropertyUpload"
 													type="text"
 													value={this.state.yearBuilt}
 													name="yearBuilt"
@@ -575,6 +581,7 @@ export class PropertyUpload extends React.Component {
 									<div className="row mb-4">
 										<div className="col-md-4">
 											<Input
+												ID="inputPropertyUpload"
 												type="text"
 												value={this.state.squareFeet}
 												name="squareFeet"
@@ -588,6 +595,7 @@ export class PropertyUpload extends React.Component {
 									<div className="row mb-4">
 										<div className="col-md-4">
 											<Input
+												ID="inputPropertyUpload"
 												type="text"
 												value={this.state.lotSize}
 												name="lotSize"
@@ -607,6 +615,7 @@ export class PropertyUpload extends React.Component {
 												Property Description
 											</Label>
 											<Input
+												ID="inputPropertyUpload"
 												row="5"
 												type="textarea"
 												value={this.state.description}
@@ -628,6 +637,7 @@ export class PropertyUpload extends React.Component {
 												Price
 											</Label>
 											<Input
+												ID="inputPropertyUpload"
 												type="text"
 												value={this.state.price}
 												name="propertyPrice"
@@ -688,6 +698,7 @@ export class PropertyUpload extends React.Component {
 										<div className="col-md-4 text-center">
 											<Button
 												className="btn-lg"
+												//href={"/listingConfirmation"}
 												onClick={e => {
 													actions.uploadProperty(
 														this.state
