@@ -14,12 +14,12 @@ const getState = ({ getStore, setStore }) => {
 
 			navBarArray: [
 				{ label: "Home", url: "/" },
-				{ label: "SellByOwner", url: "/loginowner" },
-				{ label: "Buyer", url: "/Buyer" },
+				{ label: "Sell", url: "/loginowner" },
+				{ label: "Buy", url: "/property" },
 				{ label: "Rent", url: "/Rent" },
 				{ label: "Banks", url: "/bank" },
 				{ label: "Help", url: "/Help" },
-				{ label: "Login/Sign in", url: "/" }
+				{ label: "Login/Sign in", url: "/login" }
 			]
 		},
 		actions: {
@@ -53,7 +53,7 @@ const getState = ({ getStore, setStore }) => {
 
 			//get information from api
 			search: data => {
-				console.log(data);
+				//console.log(data);
 				fetch(
 					"https://wordpress-projectfinalproject-glaelt16.c9users.io/wp-json/real_state/v2/search",
 					{
@@ -86,15 +86,30 @@ const getState = ({ getStore, setStore }) => {
 					.catch(err => {
 						alert("Fetch error: ", err);
 					});
-				// .then(res => res.json())
-				// .then(data => {
-				// 	console.log(data);
-				// 	let store = getStore();
-				// 	store.searchList = data;
+			},
+			// .then(res => res.json())
+			// .then(data => {
+			// 	console.log(data);
+			// 	let store = getStore();
+			// 	store.searchList = data;
 
-				// 	setStore({ searchList: store.searchList });
-				// })
-				// .catch(err => console.log(err));
+			// 	setStore({ searchList: store.searchList });
+			// })
+			// .catch(err => console.log(err));
+
+			findProperty: propertyID => {
+				let store = getStore();
+				if (store.propertyList !== []) {
+					let property = store.propertyList.filter((item, index) => {
+						let strID = item.ID.toString();
+						if (strID == propertyID) {
+							return item;
+						}
+					});
+					if (property[0] !== undefined) {
+						return property[0];
+					}
+				}
 			}
 		}
 	};

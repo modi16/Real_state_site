@@ -1,7 +1,4 @@
-/* 
-    General Styles
-<<<<<<< HEAD
-*/
+
 body {
   
   background-repeat: no-repeat;
@@ -92,8 +89,8 @@ input[type=text], input[type=password] {
 }
     
     
-
-.filterBar{
+/*Css for filter*/
+.filterBar, .filcard, .message{
     font-family: 'Assistant', sans-serif;
     font-size: 14px;
 }
@@ -101,8 +98,42 @@ input[type=text], input[type=password] {
     border-color: hsl(0,0%,80%);
 }
 
-/*House card Css properties */
+.message {
+  width: 40%;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.2);
+  padding: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+}
 
+.detail1{
+    height:100vh;
+    margin-left: 28px;
+    margin-right: 28px;
+}
+
+/*.reallogo{
+    height: 45px;
+    width: 45px;
+}*/
+
+.img-responsive {
+    height: auto;
+    width: auto;
+    max-height: 72px;
+    max-width: 250px;
+}
+.img-responsive1, .img-responsive2, .img-responsive3{
+    height: auto;
+    width: auto;
+    max-height: 35px;
+    max-width: 200px;
+}
+
+/*Banks card Css properties */
 .card{
     
     /*width: 455px;
@@ -188,8 +219,8 @@ input[type=text], input[type=password] {
 
 .navbar {
     position: relative;
-    height: 95px;
-    display: -ms-flexbox;
+    max-height: 80px; 
+    /*display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
@@ -197,14 +228,15 @@ input[type=text], input[type=password] {
     align-items: center;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1rem;*/
     
 }
 
 .nav-link {
     display: block;
     padding: 1.5rem 1rem;
-    font-size: 25px;
+    font-size: 18px;
+    color: white !important
   
 }
 
@@ -247,8 +279,8 @@ input[type=text], input[type=password] {
     position: relative;
     object-fit: cover;
     width: 100%;
-    height: 20%;
-    
+    height: 30%;
+    padding: 24px;
     
 }
 
@@ -308,6 +340,20 @@ input[type=text], input[type=password] {
     margin-bottom: -145px;
 }
 
+.img-top {
+    width: 100%;
+    text-align:center;
+    
+}
+
+.subheader{
+    text-align:center;
+}
+
+.footer{
+    position: relative;
+    max-height: 80px;
+}
 /* home cards marging top */
 .homeCard {
     margin-top: 175px !important;
@@ -443,7 +489,7 @@ input.error {
 }
 
 .createAccount button {
-  background-color: #519e8a;
+  background-color: #007bff;
   color: #fff;
   border: 2px solid #fff;
   width: 100%;

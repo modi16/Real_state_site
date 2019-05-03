@@ -15,6 +15,9 @@ import { Bank } from "./views/bank.jsx";
 import { Owner } from "./views/loginowner.jsx";
 import { SearchPage } from "./views/search.jsx";
 import { Regist } from "./views/registration.jsx";
+import { Notifier } from "bc-react-notifier";
+import { LoginU } from "./views/login.jsx";
+
 //create your first component
 export class Layout extends React.Component {
 	render() {
@@ -23,6 +26,7 @@ export class Layout extends React.Component {
 				<BrowserRouter>
 					<ScrollToTop>
 						<Navbar />
+						<Notifier />
 						<Switch>
 							<Route exact path="/" component={Home} />
 							<Route path="/loginowner" component={Owner} />
@@ -32,6 +36,7 @@ export class Layout extends React.Component {
 							<Route path="/property" component={Detail} />
 							<Route path="/bank" component={Bank} />
 							<Route path="/registration" component={Regist} />
+							<Route path="/login" component={LoginU} />
 							<Route render={() => <h1>Not found!</h1>} />
 						</Switch>
 						<Footer />

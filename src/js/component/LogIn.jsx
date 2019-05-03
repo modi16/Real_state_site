@@ -1,110 +1,135 @@
-import React from "react";
+import React, { Component } from "react";
+
 import PropTypes from "prop-types";
-import { Context } from "../store/appContext.jsx";
-import Form from "react-bootstrap/Form";
-import FormControl from "react-bootstrap/FormControl";
-import FormCheck from "react-bootstrap/FormCheck";
-import FormGroup from "react-bootstrap/FormGroup";
 
-const LogInPage = props => {
-	return (
-		<boddy>
-			<div className="titlle">
-				<h1>Sign Up</h1>
-				<h3>Please fill in this form to create an account.</h3>
+const emailRegex = RegExp(
+	/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+);
+
+class LogInPage extends Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			email: null,
+			password: null,
+			formErrors: {
+				email: "",
+				password: ""
+			}
+		};
+	}
+
+	// const formValid = ({ formErrors, ...rest }) => {
+	// 	let valid = true;
+
+	// 	// validate form errors being empty
+	// 	Object.values(formErrors).forEach(val => {
+	// 		val.length > 0 && (valid = false);
+	// 	});
+
+	// 	// validate the form was filled out
+	// 	Object.values(rest).forEach(val => {
+	// 		val === null && (valid = false);
+	// 	});
+
+	// 	return valid;
+	// };
+
+	// handleSubmit = e => {
+	// 	e.preventDefault();
+
+	// 	if (formValid(this.state)) {
+	// 		console.log(`
+	//         --SUBMITTING--
+	//         First Name: ${this.state.firstName}
+	//         Last Name: ${this.state.lastName}
+	//         Email: ${this.state.email}
+	//         Password: ${this.state.password}
+	//       `);
+	// 	} else {
+	// 		console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
+	// 	}
+	// };
+
+	handleChange = e => {
+		e.preventDefault();
+		const { name, value } = e.target;
+		let formErrors = this.state.formErrors;
+
+		switch (name) {
+			case "email":
+				formErrors.email = emailRegex.test(value)
+					? ""
+					: "invalid email address";
+				break;
+			case "password":
+				formErrors.password =
+					value.length < 15 ? "minimum 15 characaters required" : "";
+				break;
+			default:
+				break;
+		}
+
+		this.setState({ formErrors, [name]: value }, () =>
+			console.log(this.state)
+		);
+	};
+
+	render() {
+		const { formErrors } = this.state;
+
+		return (
+			<div className="wrapper">
+				<div className="form-wrapper">
+					<h1>Login</h1>
+					<form onSubmit={this.handleSubmit} noValidate>
+						<div className="email">
+							<label htmlFor="email">Email</label>
+							<input
+								className={
+									formErrors.email.length > 0 ? "error" : null
+								}
+								placeholder="Email"
+								type="email"
+								name="email"
+								noValidate
+								onChange={this.handleChange}
+							/>
+							{formErrors.email.length > 0 && (
+								<span className="errorMessage">
+									{formErrors.email}
+								</span>
+							)}
+						</div>
+						<div className="password">
+							<label htmlFor="password">Password</label>
+							<input
+								className={
+									formErrors.password.length > 0
+										? "error"
+										: null
+								}
+								placeholder="Password"
+								type="password"
+								name="password"
+								noValidate
+								onChange={this.handleChange}
+							/>
+							{formErrors.password.length > 0 && (
+								<span className="errorMessage">
+									{formErrors.password}
+								</span>
+							)}
+						</div>
+						<div className="createAccount">
+							<button type="submit">Login</button>
+						</div>
+					</form>
+				</div>
 			</div>
-
-			<div className="label">
-				<br />
-				<div className="last-name">
-					<form>
-						<Form.Group controlId="formGroupLastN">
-							<h5>
-								<Form.Label>Last Name</Form.Label>
-							</h5>
-							<Form.Control
-								type="Last Name"
-								placeholder="Enter your Last Name"
-							/>
-						</Form.Group>
-					</form>
-				</div>
-				<div className="first-name">
-					<form>
-						<Form.Group controlId="formGroupFirstN">
-							<h5>
-								<Form.Label>First Name</Form.Label>
-							</h5>
-							<Form.Control
-								type="First Name"
-								placeholder="Enter your First Name"
-							/>
-						</Form.Group>
-					</form>
-				</div>
-				<div className="email">
-					<form>
-						<Form.Group controlId="formGroupEmail">
-							<h5>
-								<Form.Label>E-mail</Form.Label>
-							</h5>
-							<Form.Control
-								type="Email"
-								placeholder="Enter your Email Address"
-							/>
-						</Form.Group>
-					</form>
-				</div>
-				<div className="Password">
-					<form>
-						<Form.Group controlId="formGroupPassword">
-							<h5>
-								<Form.Label>Password</Form.Label>
-							</h5>
-							<Form.Control
-								type="hidden text"
-								placeholder="Enter your Password"
-							/>
-						</Form.Group>
-					</form>
-				</div>
-				<div className="Password">
-					<form>
-						<Form.Group controlId="formGroupPassword">
-							<h5>
-								<Form.Label>Repeat Password</Form.Label>
-							</h5>
-							<Form.Control
-								type="Password"
-								placeholder="Repeat your Password"
-							/>
-						</Form.Group>
-					</form>
-				</div>
-
-				<div className="checkbox">
-					<Form.Group id="formGridCheckbox">
-						<Form.Check type="checkbox" label="Save Password" />
-					</Form.Group>
-				</div>
-				<p>
-					By creating an account you agree to our{" "}
-					<a href="#">Terms & Privacy</a>.
-				</p>
-
-				<div className="agree">
-					<button type="button" class="btn btn-primary btn-md">
-						Disagree
-					</button>
-				</div>
-				<div className="disagree">
-					<button type="button" class="btn btn-primary btn-md">
-						Agree
-					</button>
-				</div>
-			</div>
-		</boddy>
-	);
-};
+		);
+	}
+}
 
 export default LogInPage;
