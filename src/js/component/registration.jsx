@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 import PropTypes from "prop-types";
 
+import { Link } from "react-router-dom";
+
 const emailRegex = RegExp(
 	/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 );
@@ -175,8 +177,10 @@ class Registration extends Component {
 							)}
 						</div>
 						<div className="createAccount">
-							<button type="submit">Create Account</button>
-							<small>Already Have an Account?</small>
+							<Link to="/uploadProperty">
+								<button type="submit">Create Account</button>
+								<small>Already Have an Account?</small>
+							</Link>
 						</div>
 					</form>
 				</div>
