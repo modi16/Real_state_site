@@ -6,7 +6,6 @@ import { ContactModal } from "../component/contactModal.jsx";
 import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
 import { Notify } from "bc-react-notifier";
 
-
 export class Single extends React.Component {
 	constructor(props) {
 		super(props);
@@ -54,20 +53,16 @@ export class Single extends React.Component {
 								</div>
 								<div>{found.acf.description_of_property}</div>
 							</div>
-
 						);
 					}}
 				</Context.Consumer>
 				<hr className="my-4" />
-
 
 				<hr className="my-4" />
 
 				<Link to="/">
 					<span className="btn btn-primary btn-lg" role="button">
 						Back home
-
-					
 					</span>
 				</Link>
 				<Button

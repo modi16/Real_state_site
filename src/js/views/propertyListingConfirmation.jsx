@@ -30,9 +30,11 @@ export class UploadConfirmation extends React.Component {
 			<wrapper>
 				<div className="row mb-4" id="uploadConfirmationDiv">
 					<div className="col-md-4 text-center text-size-lg">
-						<p className="font-weight-bold">Congratulations your property is listed!</p>
-					</div>	
-				</div>			
+						<p className="font-weight-bold">
+							Congratulations your property is listed!
+						</p>
+					</div>
+				</div>
 				<div className="row mb-4">
 					<div className="col-md-4 text-center">
 						<Button
@@ -41,7 +43,7 @@ export class UploadConfirmation extends React.Component {
 							color="primary"
 							type="submit"
 							value="Submit">
-							Search property 
+							Search property
 						</Button>
 					</div>
 				</div>

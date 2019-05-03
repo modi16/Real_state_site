@@ -1,7 +1,6 @@
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
-			
 			bankLists: [],
 
 			propertyList: [],
@@ -14,7 +13,7 @@ const getState = ({ getStore, setStore }) => {
 				{ label: "Login/Sign in", url: "/Login" }
 			]
 		},
-			
+
 		actions: {
 			uploadProperty: data => {
 				fetch(
@@ -35,13 +34,14 @@ const getState = ({ getStore, setStore }) => {
 						}),
 						headers: {
 							//Accept: "application/json",
-							"Content-Type": "application/json", 
-							"Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvd29yZHByZXNzLXJleW1hZ28uYzl1c2Vycy5pbyIsImlhdCI6MTU1NDc2NDY1NCwibmJmIjoxNTU0NzY0NjU0LCJleHAiOjE1NTUzNjk0NTQsImRhdGEiOnsidXNlciI6eyJpZCI6IjEifX19.P-KL4uHNKF8IoQq7g55wz38Ptqu24NlLtwL28465IVQ" 
+							"Content-Type": "application/json",
+							Authorization:
+								"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvd29yZHByZXNzLXJleW1hZ28uYzl1c2Vycy5pbyIsImlhdCI6MTU1NDc2NDY1NCwibmJmIjoxNTU0NzY0NjU0LCJleHAiOjE1NTUzNjk0NTQsImRhdGEiOnsidXNlciI6eyJpZCI6IjEifX19.P-KL4uHNKF8IoQq7g55wz38Ptqu24NlLtwL28465IVQ"
 						}
 					}
 				);
 			},
-			
+
 			infopass: data => {
 				console.log(data);
 				fetch(
