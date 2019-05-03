@@ -1,6 +1,7 @@
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
+			nod: "",
 			bankLists: [],
 
 			propertyList: [],
@@ -37,9 +38,14 @@ const getState = ({ getStore, setStore }) => {
 					.then(res => res.json())
 					.then(data => {
 						let store = getStore();
-						store.filteredList = data;
+						console.log(data);
+						if (data === undefined || data.length === 0) {
+							setStore({ nod: 0 });
+						} else {
+							store.filteredList = data;
 
-						setStore({ filteredList: store.filteredList });
+							setStore({ filteredList: store.filteredList });
+						}
 					})
 					.catch(err => console.log(err));
 			},

@@ -140,6 +140,46 @@ h1{
     max-width: 200px;
 }
 
+.bhome{
+  float:left;  
+}
+
+.contactsell{
+    float:right;
+}
+.carousel .slide{
+    justify-content: center;
+    width: 500px;
+    height: 350px;
+    align-items: center;
+    margin: 0 auto;
+    background-color: ghostwhite;
+}
+
+.postTitle{
+    text-align: center;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-right:0;
+    padding-left:0;
+    
+}
+
+.summary, .address{
+    text-align: center;
+    font-size: 22px;
+    line-height: 1.5;
+    padding-bottom:10px;
+}
+
+.descrip{
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 5px;
+    line-height: 2.0;
+}
+
 /*Banks card Css properties */
 .card{
     
@@ -211,6 +251,7 @@ h1{
 .navbar {
     position: relative;
     max-height: 80px; 
+    
     /*display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
