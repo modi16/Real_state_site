@@ -1,22 +1,22 @@
 import React from "react";
 import { Context } from "../store/appContext.jsx";
-import FilterByPrice from "../component/filterByPrice.jsx";
+
 import logo1 from "../../img/home2.jpg";
 import "../../styles/home.css";
 import Search from "../component/searchbar.jsx";
 import { Cards } from "../component/homecards.jsx";
 
-export class Home extends React.Component {
+export class SearchPage extends React.Component {
 	render() {
 		return (
 			<div>
 				<img className="logo1" src={logo1} />
-				<Search />
+
 				<br />
 				<div className="row d-flex homeCard">
 					<Context.Consumer>
 						{({ store, actions }) => {
-							return store.propertyList.map(elem => {
+							return store.searchList.map(elem => {
 								return (
 									<Cards
 										key={elem.ID}

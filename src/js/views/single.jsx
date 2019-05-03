@@ -24,7 +24,7 @@ export class Single extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div className="jumbotron">
 				<Context.Consumer>
 					{({ store, actions }) => {
 						let propertyId = this.props.match.params.theid;
@@ -113,6 +113,7 @@ export class Single extends React.Component {
 						);
 					}}
 				</Context.Consumer>
+				<hr className="my-4" />
 
 				<hr className="my-4" />
 
