@@ -12,7 +12,11 @@ import Filters from "./component/filterByPrice.jsx";
 import { Bank } from "./views/bank.jsx";
 import { PropertyUpload } from "./views/propertyUpload.jsx";
 import { UploadConfirmation } from "./views/propertyListingConfirmation.jsx";
+import { Owner } from "./views/loginowner.jsx";
+import { SearchPage } from "./views/search.jsx";
+import { Regist } from "./views/registration.jsx";
 import { Notifier } from "bc-react-notifier";
+import { LoginU } from "./views/login.jsx";
 
 //create your first component
 export class Layout extends React.Component {
@@ -25,6 +29,8 @@ export class Layout extends React.Component {
 						<Notifier />
 						<Switch>
 							<Route exact path="/" component={Home} />
+							<Route path="/loginowner" component={Owner} />
+							<Route path="/search" component={SearchPage} />
 							<Route path="/demo" component={Demo} />
 							<Route path="/property/:theid" component={Single} />
 							<Route path="/property" component={Detail} />
@@ -37,6 +43,8 @@ export class Layout extends React.Component {
 								component={UploadConfirmation}
 							/>
 							<Route path="/bank" component={Bank} />
+							<Route path="/registration" component={Regist} />
+							<Route path="/login" component={LoginU} />
 							<Route render={() => <h1>Not found!</h1>} />
 						</Switch>
 						<Footer />

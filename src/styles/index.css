@@ -96,13 +96,6 @@ input[type=text], input[type=password] {
     display: inline-block;
 }
 
-h3{
-    padding-left: 45px;
-}
-
-h1{
-    padding-left: 40%;
-}
 
 .label{
     padding-left: 40px;
@@ -163,6 +156,21 @@ h1{
 /*Banks card Css properties */
 .card{
     
+    /*width: 455px;
+    height: 710px;*/
+    display: block;
+    position: relative;
+    text-align: center;
+    margin: auto;
+    margin-top: 75px; 
+    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+/*Bank card Css properties */
+.cardBank{
+    
     width: 455px;
     height: 386px;
     display: block;
@@ -181,8 +189,9 @@ h1{
     width: 50%;
     border-bottom: 3px solid blue;
     text-underline: inherit;
-    margin-left: 520px;
-    
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0px
 }
 
 .heading1 {
@@ -317,6 +326,26 @@ h1{
 }
 
 
+.cardHomeProperties {
+    
+    padding-bottom: 0px;
+    background-color: gray;
+    text-align: center;
+    font-size: 30px;
+    width: 455px;
+    height: 230px;
+    object-fit: contain;
+}
+
+/*search button home properties*/
+.btn-lg, .btn-group-lg > .btn {
+    padding: 0.5rem 2rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: 0.3rem;
+    height: 56px;
+}
+
 .col-3 {
     -ms-flex: 0 0 25%;
     flex: 0 0 25%;
@@ -340,3 +369,168 @@ h1{
     max-height: 80px;
 }
 
+/* home cards marging top */
+.homeCard {
+    margin-top: 175px !important;
+}
+
+
+.border {
+    position: relative;
+    border: 1px solid #dee2e6 !important;
+    width: 33%;
+    margin-top: 65px;
+    margin-bottom: 50px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.tag {
+    
+    text-align: center;
+    padding: 10px;
+}
+
+.buttonSignUp {
+    margin: auto;
+    text-align: center;
+    font-size: 45px;
+    justify-content: center;
+    padding-top: -18px;
+    margin-top: 0px;
+}
+
+ /*---registration--------*/
+.wrapper {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #D3D3D3;
+}
+
+.form-wrapper {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 50px #555;
+  background-color: #ffffff;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+h1 {
+  text-align: center;
+  width: 100%;
+  color: #111;
+  font-weight: lighter;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+label {
+  font-size: 0.8em;
+  margin-bottom: 0.25em;
+  color: #222;
+  font-weight: lighter;
+}
+
+input {
+  padding: 10px 10px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #cfcfcf;
+}
+
+input::placeholder {
+  font-size: 1.2em;
+  font-weight: lighter;
+  color: #999;
+}
+
+input.error {
+  border: 1px solid red;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 0.75em;
+  display: relative;
+}
+
+.firstName {
+  margin-right: 1%;
+  
+}
+
+.lastName {
+  margin-left: 1%;
+}
+
+.firstName,
+.lastName,
+.email,
+.password {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.firstName,
+.lastName {
+  width: 49%;
+}
+
+.email,
+.password {
+  width: 100%;
+}
+
+.createAccount {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.createAccount button {
+  background-color: #007bff;
+  color: #fff;
+  border: 2px solid #fff;
+  width: 100%;
+  margin-top: 1em;
+  padding: 8px 0px;
+  font-size: 1em;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  margin-bottom: 0.25em;
+}
+
+.createAccount button:hover {
+  color: #519e8a;
+  background-color: #fff;
+  border: 2px solid #519e8a;
+}
+
+.createAccount small {
+  color: #999;
+  font-weight: lighter;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    border: 1px solid #cfcfcf;
+    
+}
