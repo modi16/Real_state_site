@@ -5,7 +5,7 @@ import reallogo from "../../img/reallogo.jpg";
 
 export const Navbar = () => {
 	return (
-		<div className="container-fluid p-0">
+		<div className="container-fluid p-4 ">
 			<nav className="navbar navbar-expand-sm navbar-dark bg-dark">
 				<button
 					className="navbar-toggler ml-auto"

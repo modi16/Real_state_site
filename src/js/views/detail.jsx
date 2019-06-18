@@ -27,7 +27,7 @@ export class Detail extends React.Component {
 										}}
 									/>
 								);
-							} else if (store.filteredList.length > 0) {
+							} else {
 								return store.filteredList.map(property => {
 									return (
 										<Card
@@ -44,24 +44,6 @@ export class Detail extends React.Component {
 										/>
 									);
 								});
-							} else if (typeof store.nod !== "undefined") {
-								return (
-									<div>
-										<div
-											className="detail1"
-											style={{
-												backgroundImage:
-													"url(" + backg + ") "
-											}}
-										/>
-										<div className="message">
-											<strong>
-												No matching properties were
-												found
-											</strong>
-										</div>
-									</div>
-								);
 							}
 						}}
 					</Context.Consumer>
